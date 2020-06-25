@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: var(--back);
+  background: var(--background);
   font-size: 16px;
   font-family: 'Nunito Sans', sans-serif;
   color: var(--black);
@@ -10,22 +10,32 @@ body {
 Link{
   text-decoration: none;
 }
-:root {
-  --black:#111517;
-  --back:#fafafa;
-}
-::-webkit-scrollbar {
-  width: 18px;     /* Tamaño del scroll en vertical */
-  height: 58px;    /* Tamaño del scroll en horizontal */
 
+.is-dark-mode {
+  --black: white;
+  --white: #273542;
+  --background: #1a2833;
+}
+
+.is-light-mode {
+  --black: #111517;
+  --white: white;
+  --background: #fafafa;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black: white;
+    --white: #273542;
+    --background: red;
+  }
+}
+
+
+/* ::-webkit-scrollbar {
+  width: 18px;    
+  height: 58px;   
 }
 ::-webkit-scrollbar-thumb {
   background: #999999;
   border-radius: 4px;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
+} */

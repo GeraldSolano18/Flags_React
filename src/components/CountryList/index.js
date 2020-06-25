@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { fetchCountry } from "../../redux/actions/CountryAction";
 import { CountryLists } from "./styles";
 import { useSelector, useDispatch } from "react-redux";
+import {Wrapper} from '../wrapper'
 import { Country } from "../Country";
 
 export const CountryList = () => {
@@ -27,17 +28,20 @@ export const CountryList = () => {
    })
 
   return (
-    <CountryLists>
-      {countryList.map(({ name, flag, alpha2Code, population, region, capital }) => (
-        <Country
-          key={alpha2Code}
-          flag={flag}
-          name={name}
-          population={population}
-          region={region}
-          capital={capital}
-        />
-      ))}
-    </CountryLists>
+    <Wrapper>
+      <CountryLists>
+        {countryList.map(({ name, flag, alpha2Code, population, region, capital }) => (
+          <Country
+            key={alpha2Code}
+            flag={flag}
+            name={name}
+            population={population}
+            region={region}
+            capital={capital}
+            alpha2Code={alpha2Code}
+          />
+        ))}
+      </CountryLists>
+    </Wrapper>
   );
 };

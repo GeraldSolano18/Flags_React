@@ -6,12 +6,9 @@ export const FILTER_BY_REGION ='FILTER_BY_REGION';
 
 //Funciones creadoras de acciones
 export const fetchCountry = () => (dispatch) => {
-
   dispatch({
     type: FETCH_COUNTRY_REQUEST,
   });
-  
-
   fetch('https://restcountries.eu/rest/v2/all')
     .then((res) => res.json())
     .then((data) => {

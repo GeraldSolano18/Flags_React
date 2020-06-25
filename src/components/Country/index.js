@@ -2,8 +2,9 @@ import React from "react";
 // import {useSelector} from 'react-redux';
 import { CountrySyled, Article, Img, StyledLink } from "./styles";
 import { useNearScreen } from "../../hooks/useNearScreen";
+import slugify from 'slugify'
 
-export const Country = ({ flag, name, population, region, capital }) => {
+export const Country = ({ flag, name, population, region, capital, alpha2Code }) => {
   // const isFetching = useSelector((store) =>store.Country.isFetching);
   // console.log('oyetee')
   // console.log(isFetching)
@@ -14,7 +15,7 @@ export const Country = ({ flag, name, population, region, capital }) => {
       <CountrySyled ref={element}>
         {show && (
           <> 
-            <StyledLink style={{ textDecoration: 'none' }} to={`/detail/${name}`}>
+            <StyledLink style={{ textDecoration: 'none' }} to={`/detail/${slugify(alpha2Code)}`}>
             <Article>
               <Img alt="imagendeCounty" src={flag} />
               <div className="details">
