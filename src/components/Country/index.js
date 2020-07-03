@@ -6,7 +6,7 @@ import slugify from 'slugify'
 
 export const Country = ({ flag, name, population, region, capital, alpha2Code }) => {
   // const isFetching = useSelector((store) =>store.Country.isFetching);
-  // console.log('oyetee')
+  // console.log('oyetee') AGREGAR SPINNERCUANDO ESTA CARGADNO
   // console.log(isFetching)
 
    const [show, element] = useNearScreen();

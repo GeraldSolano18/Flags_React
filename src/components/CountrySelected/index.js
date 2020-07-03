@@ -1,5 +1,5 @@
-import React from "react";
-import { CountrySelectedStyle } from "./styles";
+import React from "react"
+import { CountrySelectedStyle } from "./styles"
 
 export const CountrySelected = ({
   flag,
