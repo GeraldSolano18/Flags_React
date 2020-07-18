@@ -34,7 +34,7 @@ export const Country = (state = initialState, action) => {
         isFetching: false,
         error: action.payload.error,
       };
-
+ 
     case SET_COUNTRY_BY_NAME: {
       let list
       //si el filtro del select esta seleccionado pues lista pasa a ser el array countryFilteredByRegion
